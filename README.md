@@ -8,6 +8,8 @@
 + 기술 및 라이브러리
   + Spring Boot, JSP, JPA, Hibernate, JSTL
   + Maven, LoomBok, yml, Spring Boot DevTools, Spring Data JPA, MySQL Driver, Spring Security, Spring Web
++ front
+  + BootStrap 4
 
 ---
 # erd
