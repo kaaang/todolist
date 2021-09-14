@@ -12,7 +12,7 @@
   + BootStrap 4
 
 ---
-# erd
+# ERD
 URL : https://aquerytool.com/aquerymain/index/?rurl=c4454161-5905-4058-b83e-c2c27f906941&
 Password : vqr2hr
 
