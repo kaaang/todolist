@@ -4,7 +4,7 @@
 
 # 개발환경
 + Tool
-  + Intellij, Aquerytool, MySQL 5.7 Command Line Client, MySQL Workbench 8.0 CE, Postman, Git, Sourcetree, Eclipse, SpringToolSuite4
+  + Intellij, Aquerytool, MySQL 5.7 Command Line Client, MySQL Workbench 8.0 CE, Postman, Git, Sourcetree
 + 기술 및 라이브러리
   + Spring Boot, JSP, JPA, Hibernate, JSTL
   + Maven, LoomBok, yml, Spring Boot DevTools, Spring Data JPA, MySQL Driver, Spring Security, Spring Web
@@ -30,6 +30,8 @@ Password : vqr2hr
   + create user 'joopda'@'%' identified by 'joopda1234';
   + GRANT ALL PRIVILEGES ON *.* TO 'joopda'@'%';
   + CREATE DATABASE joopda CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+
++최조 application.yml에서 jpa create로 실행후 이후는 update로 진행
 
 ---
 # 사용 방법
