@@ -18,11 +18,13 @@ public class BoardController {
     @Autowired
     private BoardService boardService;
 
+    //글쓰기 폼
     @GetMapping("/board/boardForm")
     public String boardForm(){
         return "board/boardForm";
     }
 
+    //게시글 완료 or 미완료 불러오기
     @GetMapping("/board/boardList/{status}")
     public String boardList(Model model,
                             @PageableDefault(size = 5,sort = "id",direction = Sort.Direction.DESC)Pageable pageable,
@@ -37,12 +39,14 @@ public class BoardController {
         }
     }
 
+    //게시글 상세보기
     @GetMapping("/board/{id}")
     public String boardDetail(@PathVariable int id, Model model){
         model.addAttribute("board",boardService.detail(id));
         return "board/boardDetail";
     }
 
+    //게시글 수정 폼
     @GetMapping("/board/{id}/boardUpdate")
     public String boardUpdate(@PathVariable int id, Model model){
         model.addAttribute("board",boardService.detail(id));

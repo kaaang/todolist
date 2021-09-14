@@ -1,6 +1,7 @@
 package com.joopda.todolist.config;
 
 import com.joopda.todolist.config.auth.PrincipalDetailService;
+import com.joopda.todolist.handler.LoginFailHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,6 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private PrincipalDetailService principalDetailService;
 
+    //해쉬 암호화 사용 메서드
     @Bean
     public BCryptPasswordEncoder encodePWD(){
         return new BCryptPasswordEncoder();
@@ -31,11 +33,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
+
+    //해쉬 암호화 실행부분
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(principalDetailService).passwordEncoder(encodePWD());
     }
 
+    @Autowired
+    public LoginFailHandler loginFailHandler;
+
+
+    //로그인 인터셉트
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -49,6 +58,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .formLogin()
                     .loginPage("/auth/loginForm")
                     .loginProcessingUrl("/auth/loginProc")
+                    .failureHandler(loginFailHandler)
                     .defaultSuccessUrl("/");
     }
 }

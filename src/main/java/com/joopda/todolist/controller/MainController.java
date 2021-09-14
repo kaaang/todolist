@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainController {
 
 
+    //최조접속 or HOME 페이지
     @GetMapping({"","/"})
     public String index(){
         return "index";

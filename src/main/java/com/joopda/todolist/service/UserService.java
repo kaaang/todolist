@@ -14,9 +14,11 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    //암호화 함수
     @Autowired
     private BCryptPasswordEncoder encoder;
 
+    //사용자 저장 (해쉬 암호화 사용)
     @Transactional
     public void join(User user){
         String rawPass = user.getPassword();

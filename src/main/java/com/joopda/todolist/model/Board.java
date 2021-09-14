@@ -18,6 +18,10 @@ import java.sql.Timestamp;
 @Entity
 public class Board {
 
+    /*
+    * erd 설계와 일치
+    * */
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

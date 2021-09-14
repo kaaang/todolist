@@ -14,6 +14,9 @@ import javax.persistence.*;
 @Entity
 public class User {
 
+    /*
+     * erd 설계와 일치
+     * */
 
     //사용자 번호(pk)
     @Id

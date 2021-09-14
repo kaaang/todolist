@@ -15,6 +15,7 @@ public class PrincipalDetailService implements UserDetailsService {
     @Autowired
     private UserRepository userRepository;
 
+    //사용자 확인 부분
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User principal = userRepository.findByUsername(username)

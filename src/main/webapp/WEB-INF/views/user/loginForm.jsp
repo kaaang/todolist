@@ -18,6 +18,9 @@
         </div>
 
 
+        <c:if test="${param.error}">
+            <p style="color:red">${exception }</p>
+        </c:if>
         <button type="btn-login" class="btn btn-primary">로그인</button>
     </form>
 
